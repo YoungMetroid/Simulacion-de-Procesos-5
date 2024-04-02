@@ -81,7 +81,7 @@ public class Preguntas extends JPanel implements ActionListener {
 		if (!infoHolder[0].getText().isEmpty()) {
 			for (int i = 0; i < infoHolder[0].getText().length(); i++) {
 				try {
-					if (!infoHolder[0].getText(i, 1).equals(" ")) {
+					if (!" ".equals(infoHolder[0].getText(i, 1))) {
 						check = true;
 					}
 				} catch (BadLocationException e) {
@@ -107,11 +107,11 @@ public class Preguntas extends JPanel implements ActionListener {
 			Integer.parseInt(infoHolder[5].getText());
 
 			if (Integer.parseInt(infoHolder[5].getText()) >= 1) {
-				if (infoHolder[3].getText().equals("+") || infoHolder[3].getText().equals("-")
-						|| infoHolder[3].getText().equals("*") || infoHolder[3].getText().equals("^")) {
+				if ("+".equals(infoHolder[3].getText()) || "-".equals(infoHolder[3].getText())
+						|| "*".equals(infoHolder[3].getText()) || "^".equals(infoHolder[3].getText())) {
 					check = true;
 					checkIDs();
-				} else if (infoHolder[3].getText().equals("/") || infoHolder[3].getText().equals("%")) {
+				} else if ("/".equals(infoHolder[3].getText()) || "%".equals(infoHolder[3].getText())) {
 					if ((Integer.parseInt(infoHolder[4].getText()) == 0)) {
 						check = false;
 						Space.setText("!! No se puede dividir entre 0 !!");
